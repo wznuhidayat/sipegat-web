@@ -26,14 +26,23 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="<?= base_url().'admin/index';?>" class="nav-link <?= $this->uri->segment(2) == 'index' ? 'active' : '' ?>">
-              <i class="nav-icon fab fa-product-hunt"></i>
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
                 <!-- <i class="right fas fa-angle-left"></i> -->
               </p>
             </a>
+
           </li>
-          
+          <li class="nav-item">
+            <a href="<?= base_url().'product';?>" class="nav-link <?= $this->uri->segment(1) == 'product' ? 'active' : '' ?>">
+              <i class="nav-icon fab fa-product-hunt"></i>
+              <p>
+                Product
+                <!-- <i class="right fas fa-angle-left"></i> -->
+              </p>
+            </a>
+          </li>
           <li class="nav-header">Admin</li>
           <li class="nav-item">
             <a href="<?= base_url().'admin/adminview';?>" class="nav-link <?= $this->uri->segment(2) == 'adminview' ? 'active' : '' ?>">
