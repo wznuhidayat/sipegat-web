@@ -10,25 +10,25 @@
       <!-- User Account: style can be found in dropdown.less -->
           <li class="nav-item dropdown user user-menu">
             <a href="#" class="nav-link" data-toggle="dropdown">
-              <img src="<?= base_url('upload/') ?>logo.jpeg" class="user-image" alt="User Image">
-              <span class="hidden-xs">User</span>
+              <img src="<?= base_url('upload/admin/').$this->funct->admin_login()->img ?>" class="user-image" alt="User Image">
+              <span class="hidden-xs"><?= $this->funct->admin_login()->name ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="#" class="img-circle" alt="User Image" >
+                <img src="<?= base_url('upload/admin/').$this->funct->admin_login()->img ?>" class="img-circle" alt="User Image" >
                 <?php //echo var_dump($this->funct->admin_login()); ?>
                 <p>
-                  User
+                  <?= $this->funct->admin_login()->name ?>
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+                <div class="float-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
-                <div class="pull-right">
+                <div class="float-right">
                   <a href="<?php echo site_url('auth/logout') ?>" class="btn btn-danger btn-flat">Sign out</a>
                 </div>
               </li>

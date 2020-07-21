@@ -22,7 +22,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <?php // $this->load->view('messages') ?>
+      <?php $this->load->view('messages') ?>
      <div class="card card-orange card-outline">
             <div class="card-header">
                 <h3 class="card-title">Add Product</h3>
@@ -54,12 +54,17 @@
                                     <?= form_error('price') ?>       
                                 </div>
                             </div>
-                            <div class="form-group <?= form_error('category') ? 'is-invalid':'' ?>">
+                            <div class="form-group">
                                 <label for="category">Category</label>
-                                <input type="text" class="form-control" value="<?=set_value('category') ?>" id="category" placeholder="category" name="category">
-                                <div class="invalid-feedback">
-                                    <?= form_error('category') ?>
-                                </div>        
+                                <select name="category" id="category" class="form-control" required>
+                                    <option value="">- select -</option>
+                                    <option value="Akademik">Akademik</option>
+                                    <option value="Bahasa">Bahasa</option>
+                                    <option value="Sport">Sport</option>
+                                    <option value="Musik">Musik</option>
+                                    <option value="Seni">Seni</option>
+                                    <option value="Programer">Programer</option>
+                                </select>
                             </div>
                             <div class="form-group ">
                                 <label for="image">Image</label>

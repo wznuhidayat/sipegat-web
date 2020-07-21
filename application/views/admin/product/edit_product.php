@@ -21,12 +21,12 @@
 
     <!-- Main content -->
     <section class="content">
-      <?php // $this->load->view('messages') ?>
+      <?php $this->load->view('messages') ?>
      <div class="card card-orange card-outline">
             <div class="card-header">
                 <h3 class="card-title">Add Product</h3>
                 <div class="float-right">
-                  <a href="<?php echo site_url('Product/Productview'); ?>" class="btn-sm btn-warning btn-flat">
+                  <a href="<?php echo site_url('product'); ?>" class="btn-sm btn-warning btn-flat">
                      <i class="fa fa-undo"> back</i>
                     </a>
                 </div>
@@ -56,12 +56,17 @@
                                 </div>
                             </div>
                             
-                            <div class="form-group <?= form_error('category') ? 'is-invalid':'' ?>">
-                                <label for="category">category</label>
-                                <input type="text" class="form-control" value="<?= $product->category ?>" id="category" placeholder="category" name="category">
-                                <div class="invalid-feedback">
-                                    <?= form_error('category') ?>
-                                </div>             
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select name="category" id="category" class="form-control" required>
+                                    <option value="">- select -</option>
+                                    <option value="Akademik" <?= $product->category == 'Akademik' ? 'selected' : ''  ?>>Akademik</option>
+                                    <option value="Bahasa" <?= $product->category == 'Bahasa' ? 'selected' : ''  ?>>Bahasa</option>
+                                    <option value="Sport" <?= $product->category == 'Sport' ? 'selected' : ''  ?>>Sport</option>
+                                    <option value="Musik" <?= $product->category == 'Musik' ? 'selected' : ''  ?>>Musik</option>
+                                    <option value="Seni" <?= $product->category == 'Seni' ? 'selected' : ''  ?>>Seni</option>
+                                    <option value="Programmer" <?= $product->category == 'Programmer' ? 'selected' : ''  ?>>Programmer</option>
+                                </select>
                             </div>
                             <div class="form-group <?= form_error('image') ? 'is-invalid':'' ?>">
                                 <label for="image">Image</label>

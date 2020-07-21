@@ -21,7 +21,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <?php // $this->load->view('messages') ?>
+      <?php $this->load->view('messages') ?>
      <div class="card card-orange card-outline">
             <div class="card-header">
                 <h3 class="card-title">Add Admin</h3>

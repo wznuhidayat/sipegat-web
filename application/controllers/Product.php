@@ -27,7 +27,7 @@ class Product extends CI_Controller{
         if ($validation->run()) {
             $Product->save();
             $this->session->set_flashdata('success', 'Data Successfully Added');
-            redirect('Product');
+            redirect('product');
         }
         // $vendor[null] = '- Select -';
         // foreach ($query_vendor as $ven) {
@@ -41,7 +41,7 @@ class Product extends CI_Controller{
 
     public function edit($id = null)
     {
-        if (!isset($id)) redirect('Product');
+        if (!isset($id)) redirect('product');
        
         $Product = $this->m_Product;
         // $query_vendor = $this->m_vendor->getAll();
@@ -53,7 +53,7 @@ class Product extends CI_Controller{
             if($this->db->affected_rows() > 0){
             $this->session->set_flashdata('success', 'Data Successfully Added');
             }
-            redirect('Product');
+            redirect('product');
         }
         // $vendor[null] = '- Select -';
         // foreach ($query_vendor as $ven) {
@@ -75,7 +75,7 @@ class Product extends CI_Controller{
             if($this->db->affected_rows() > 0){
                 $this->session->set_flashdata('deleted', 'Deleted Successfully');
             }
-            redirect(site_url('Product'));
+            redirect(site_url('product'));
         }
     }
    

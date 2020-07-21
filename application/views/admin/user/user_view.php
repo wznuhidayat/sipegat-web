@@ -7,11 +7,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Product</h1>
+            <h1 class="m-0 text-dark">User</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active"><a href="#">Product</a></li>
+              <li class="breadcrumb-item active"><a href="#">User</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -21,13 +21,13 @@
 
     <!-- Main content -->
     <section class="content">
-      <?php  $this->load->view('messages') ?>
+      <?php $this->load->view('messages') ?>
      <div class="card card-orange card-outline">
             <div class="card-header">
-                <h3 class="card-title">Data Product</h3>
+                <h3 class="card-title">Data User</h3>
                 <div class="float-right">
-                    <a href="<?php echo site_url('product/add'); ?>" class="btn-sm btn-success ">
-                     <i class="fa fa-plus"> Add Product</i>
+                    <a href="<?php echo site_url('user/add'); ?>" class="btn-sm btn-success ">
+                     <i class="fa fa-plus"> Add User</i>
                     </a>
                 </div>
             </div>
@@ -36,36 +36,33 @@
                     <thead>
                         <tr>
                             <th>Img</th>
-                            <th>Kode Product</th>
                             <th>Name</th>
-                            <!-- <th>Vendor</th> -->
-                            <th>Price</th>
-                            <th>Category</th>
-                            <th>Detail</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                            <th>Address</th>
                             <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                        foreach($Product as $u => $data): ?>
+                    <?php 
+                    foreach($user as $u => $data): ?>
                         <tr>
                             <td>
-                                <img src="<?php echo base_url('upload/products/').$data->img ?>" alt="" width="64" >
+                                <img src="<?php echo base_url('upload/user/').$data->img ?>" alt="" width="64" >
                             </td>
-                            <td><?php echo $data->kode_product ?></td>
                             <td><?php echo $data->name ?></td>
-                            <!-- <td><?php echo $data->vendor_name ?></td> -->
-                            <td><?php echo $data->price ?></td>
-                            <td><?php echo $data->category ?></td>
-                            <td><?php echo $data->detail ?></td>
-                            <td class="text-center">                    
-                                    <a ><?php echo anchor('product/edit/'.$data->kode_product, '<div class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></div>') ?>
+                            <td><?php echo $data->email ?></td>
+                            <td><?php echo $data->phone ?></td>
+                            <td><?php echo $data->gender ?></td>
+                            <td><?php echo $data->address ?></td>
+                            <td class="text-center">
+                                <a ><?php echo anchor('user/edit/'.$data->email, '<div class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></div>') ?>
                                     </a>
-                                    <a href="<?= site_url('product/delete/'.$data->kode_product) ?>" onclick="javascript: return confirm('are you sure to delete this data?')"  class="btn btn-xs btn-danger"  ><i class="fa fa-trash"></i></a>
-
+                                <a href="<?= site_url('user/delete/'.$data->email) ?>" onclick="javascript: return confirm('are you sure to delete this data?')"  class="btn btn-xs btn-danger"  ><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
-                        <?php endforeach; ?>
+                    <?php endforeach; ?>
                     </tbody>
                  </table>
             </div>  

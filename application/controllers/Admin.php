@@ -7,7 +7,7 @@ class Admin extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 
-	public function index(){
+	public function dashboard(){
 		$this->template->load('admin/template','admin/main');
 	}
 	public function adminview(){
