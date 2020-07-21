@@ -5,7 +5,7 @@ class Product extends CI_Controller{
 	public function __construct()
     {
         parent::__construct();
-        // check_not_login();
+        check_not_login();
         $this->load->model(['m_Product']);
         $this->load->library('form_validation');
     }
